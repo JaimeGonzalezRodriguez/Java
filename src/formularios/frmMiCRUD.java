@@ -5,11 +5,13 @@
  */
 package formularios;
 import conexiones.conexionSQL;
+import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -29,12 +31,16 @@ public class frmMiCRUD extends javax.swing.JFrame {
     public frmMiCRUD(){
         initComponents();
 		mostrarDatos();
+		getContentPane().setBackground(new java.awt.Color(60, 63, 65));
+		//frmMiCRUD.setBackground(Color.red);
+		//JFrame.setBackground(new Color(44, 56, 64));
     }
     
-    public frmMiCRUD(String parametro1){
-           initComponents();
-
-           
+	public void limpiarDatos(){
+		txtAPELLIDO.setText("");
+		txtNOMBREALUM.setText("");
+		txtCALIFICACION.setText("");
+		txtCURSO.setText("");
     }
 	
 	public void insertarDatos(){
@@ -130,8 +136,10 @@ public class frmMiCRUD extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lblNOMBRE.setForeground(new java.awt.Color(255, 255, 255));
         lblNOMBRE.setText("Nombre del Alumno");
 
+        lblApellido.setForeground(new java.awt.Color(255, 255, 255));
         lblApellido.setText("Apellidos del Alumno:");
 
         txtAPELLIDO.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +148,7 @@ public class frmMiCRUD extends javax.swing.JFrame {
             }
         });
 
+        lblCURSO.setForeground(new java.awt.Color(255, 255, 255));
         lblCURSO.setText("Curso:");
 
         cmdGUARDAR.setText("GUARDAR");
@@ -188,6 +197,7 @@ public class frmMiCRUD extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtablaAlumnos);
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Calificacion");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -197,16 +207,16 @@ public class frmMiCRUD extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addContainerGap(34, Short.MAX_VALUE)
                         .addComponent(cmdGUARDAR)
-                        .addGap(27, 27, 27)
+                        .addGap(18, 18, 18)
                         .addComponent(cmdEDITAR)
-                        .addGap(26, 26, 26)
+                        .addGap(18, 18, 18)
                         .addComponent(cmdELIMINAR)
                         .addGap(18, 18, 18)
                         .addComponent(cmdNUEVO))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
+                        .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1)
                             .addComponent(txtNOMBREALUM, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
@@ -216,7 +226,7 @@ public class frmMiCRUD extends javax.swing.JFrame {
                             .addComponent(lblApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblNOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCALIFICACION))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -225,23 +235,23 @@ public class frmMiCRUD extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addGap(30, 30, 30)
                         .addComponent(lblNOMBRE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtNOMBREALUM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
+                        .addGap(40, 40, 40)
                         .addComponent(lblApellido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtAPELLIDO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
+                        .addGap(40, 40, 40)
                         .addComponent(lblCURSO)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCURSO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
+                        .addGap(40, 40, 40)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(txtCALIFICACION, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
+                        .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cmdGUARDAR)
                             .addComponent(cmdEDITAR)
@@ -250,7 +260,7 @@ public class frmMiCRUD extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
@@ -291,16 +301,7 @@ public class frmMiCRUD extends javax.swing.JFrame {
         txtCURSO.setText(jtablaAlumnos.getValueAt(filaSelect, 3).toString());
         txtCALIFICACION.setText(jtablaAlumnos.getValueAt(filaSelect, 4).toString());
     }//GEN-LAST:event_jtablaAlumnosMouseClicked
-
-    public void limpiarDatos(){
-    txtAPELLIDO.setText("");
-    txtNOMBREALUM.setText("");
-    txtCALIFICACION.setText("");
-    txtCURSO.setText("");
-    
-    }
-    
-    
+  
     /**
      * @param args the command line arguments
      */
